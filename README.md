@@ -22,6 +22,11 @@ event bus.
                          |
 +--------------+         |
 |create payment+---------+
++--------------+         |
+                         |
+                         |
++--------------+         |
+|create notif  +---------+
 +--------------+
 
 ```
@@ -46,3 +51,6 @@ event bus.
     ├── product_service.go
     └── service.go
 ```
+
+## Notes
+- [x] add http web service
