@@ -2,7 +2,6 @@ package service
 
 import (
 	"shop/model"
-	"time"
 )
 
 type (
@@ -15,9 +14,9 @@ type (
 func NewProductService() ProductService {
 	return &productService{
 		products: []model.Product{
-			model.Product{ID: time.Now().UnixNano(), Price: 100.0},
-			model.Product{ID: time.Now().UnixNano(), Price: 200.0},
-			model.Product{ID: time.Now().UnixNano(), Price: 300.0},
+			model.Product{ID: 123, Price: 100.0},
+			model.Product{ID: 124, Price: 200.0},
+			model.Product{ID: 125, Price: 300.0},
 		},
 	}
 }
