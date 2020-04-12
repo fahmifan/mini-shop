@@ -42,14 +42,14 @@ func (o *orderService) CreateOrder(productIDs []int64) *model.Order {
 	}
 
 	log.Info("create order, productIDs: ", productIDs)
-	// go func() {
-	_, err := o.bus.Emit(context.Background(), eventbus.OrderCreated, *order)
-	if err != nil {
-		log.Error(err)
-		return nil
-	}
+	go func() {
+		_, err := o.bus.Emit(context.Background(), eventbus.OrderCreated, *order)
+		if err != nil {
+			log.Error(err)
+			return
+		}
 
-	// }()
+	}()
 
 	return order
 }
